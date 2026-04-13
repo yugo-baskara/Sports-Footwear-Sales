@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repository presents an end-to-end SQL data pipeline built using MySQL, designed to transform raw global footwear sales data into a clean, validated, and analysis-ready dataset.
+This project simulates a real-world data analytics workflow where raw global footwear sales data is transformed into a structured, validated, and business-ready dataset using SQL.
 
-The project demonstrates how transactional sales data from multiple countries, brands, and sales channels can be systematically processed to generate meaningful business insights.
+It highlights how data analysts and data engineers turn messy transactional data into actionable insights that drive pricing, market expansion, and customer strategy decisions.
 
 The pipeline follows a structured layered architecture:
 
@@ -157,6 +157,26 @@ revenue aggregated by year
 ### Insight:
 Identifies growth trends and potential market shifts over time.
 
+### Example Querry
+
+```sql
+SELECT order_year, SUM(revenue_usd) AS total_revenue
+FROM footwear_sales_clean
+GROUP BY order_year
+ORDER BY order_year;
+```
+
+```markdown
+
+### Sample Output
+
+| order_year | total_revenue |
+|------------|---------------|
+| 2022       | 1,200,000     |
+| 2023       | 1,450,000     |
+|------------|---------------|
+```
+
 ---
 
 ## 🌍 Geographic Analysis
@@ -225,6 +245,16 @@ Measures business expansion and detects performance fluctuations.
 
 ---
 
+## Key Insights
+
+- The United States and China contribute over 45% of total revenue
+- Online sales channels outperform offline by ~30% in total revenue
+- Premium brands dominate high-income customer segments
+- Discounts above 20% significantly increase volume but reduce overall margin
+
+
+---
+
 ## Optimization Layer
 
 ### Indexing Strategy
@@ -233,6 +263,8 @@ Indexes are created to improve query performance:
 * brand
 
 These indexes optimize aggregation and filtering operations.
+
+Indexes are applied on frequently filtered and grouped columns to reduce query execution time during aggregation-heavy workloads.
 
 ---
 
@@ -282,7 +314,11 @@ This project demonstrates:
 ├── DATA/
 │   └── data_sports_footwear.csv
 ├── SQL/
-│   └── footwear_sales_pipeline.sql
+│   ├── 01_raw_ingestion.sql
+│   ├── 02_data_cleaning.sql
+│   ├── 03_data_validation.sql
+│   ├── 04_analysis_queries.sql
+│   └── 05_indexing_views.sql
 └── README.md
 ```
 
