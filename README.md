@@ -97,7 +97,7 @@ This table represents the curated analytical dataset.
 Data Type Standardization
 * order_date converted into DATE format using:
 
-```
+```sql
 STR_TO_DATE(order_date, '%Y-%m-%d')
 ```
 
@@ -240,7 +240,7 @@ These indexes optimize aggregation and filtering operations.
 
 View:
 
-```
+```sql
 sales_summary
 ```
 
