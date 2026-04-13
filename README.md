@@ -270,8 +270,8 @@ This project demonstrates:
 ---
 
 ## Technology Stack
-MySQL 8.x
-SQL (DDL, DML, Data Cleaning, Data Analysis)
+* MySQL 8.x
+* SQL (DDL, DML, Data Cleaning, Data Analysis)
 
 ---
 
@@ -320,6 +320,7 @@ footwear_sales_raw
 ## 👤 Author
 
 ### Y Baskara
+LinkedIn : https://www.linkedin.com/in/yugobaskara/
 Data Analyst | SQL | Data Engineering Enthusiast
 
 ---
