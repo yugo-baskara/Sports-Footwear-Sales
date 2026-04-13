@@ -192,7 +192,7 @@ Identifies preferred purchasing channels (online vs offline).
 
 ---
 
-##🏷️ Pricing Strategy (Discount Impact)
+## 🏷️ Pricing Strategy (Discount Impact)
 relationship between discount levels, volume, and revenue
 
 ### Insight:
