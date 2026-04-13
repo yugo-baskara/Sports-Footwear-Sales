@@ -55,12 +55,12 @@ Data_sports_footwear.csv
 ```
 
 It contains transactional-level data, including:
-• order details
-• product attributes (brand, category, size, color)
-• pricing and discounts
-• sales channels
-• geographic distribution
-• customer segmentation data
+* order details
+* product attributes (brand, category, size, color)
+* pricing and discounts
+* sales channels
+* geographic distribution
+* customer segmentation data
 Data ingestion simulates a real-world batch loading process using LOAD DATA INFILE.
 
 ---
@@ -75,10 +75,10 @@ portofolio.footwear_sales_raw
 
 The raw table stores the dataset in its original form without transformation.
 ### Characteristics:
-• order date stored as text
-• no enforced formatting
-• minimal constraints applied
-• preserves original data integrity
+* order date stored as text
+* no enforced formatting
+* minimal constraints applied
+* preserves original data integrity
 
 ---
 
@@ -93,21 +93,22 @@ portofolio.footwear_sales_clean
 This table represents the curated analytical dataset.
 
 ### Transformations Applied:
+
 Data Type Standardization
-• order_date converted into DATE format using:
+* order_date converted into DATE format using:
 
 ```
 STR_TO_DATE(order_date, '%Y-%m-%d')
 ```
 
 Derived Columns
-• order_year and order_month extracted for time-based analysis
+* order_year and order_month extracted for time-based analysis
 
 Text Cleaning
-• all string fields are trimmed to remove unnecessary whitespace
+* all string fields are trimmed to remove unnecessary whitespace
 
 Revenue Recalculation
-• revenue is recalculated using:
+* revenue is recalculated using:
 
 ```sql
 final_price_usd * units_sold
@@ -116,8 +117,8 @@ final_price_usd * units_sold
 to ensure consistency and eliminate source errors
 
 Data Integrity
-• order_id enforced as PRIMARY KEY
-• duplicate checks performed prior to constraint application
+* order_id enforced as PRIMARY KEY
+* duplicate checks performed prior to constraint application
 
 ---
 
@@ -126,11 +127,11 @@ Data Integrity
 Data quality checks are implemented to ensure analytical reliability.
 
 ### Validation Rules:
-• revenue must equal final_price × units_sold
-• final price must not exceed base price
-• no NULL values in critical fields (order_id, order_date, revenue)
-• customer rating must be within 0–5 range
-• units sold must be greater than zero
+* revenue must equal final_price × units_sold
+* final price must not exceed base price
+* no NULL values in critical fields (order_id, order_date, revenue)
+* customer rating must be within 0–5 range
+* units sold must be greater than zero
 
 Invalid records are identified through audit queries for transparency.
 
@@ -143,7 +144,7 @@ All analyses are performed on the clean dataset.
 ---
 
 ## 💰 Revenue Analysis
-• total revenue across all transactions
+* total revenue across all transactions
 
 ### Insight:
 Provides a baseline for overall business performance.
@@ -159,8 +160,8 @@ Identifies growth trends and potential market shifts over time.
 ---
 
 ## 🌍 Geographic Analysis
-• revenue distribution by country
-• top-performing country per year
+* revenue distribution by country
+* top-performing country per year
 
 ### Insight:
 Highlights key markets and regional dominance patterns.
@@ -225,11 +226,11 @@ Measures business expansion and detects performance fluctuations.
 ---
 
 ## Optimization Layer
-### Indexing Strategy
 
+### Indexing Strategy
 Indexes are created to improve query performance:
-• order_year
-• brand
+* order_year
+* brand
 
 These indexes optimize aggregation and filtering operations.
 
@@ -244,7 +245,7 @@ sales_summary
 ```
 
 ### Provides:
-• yearly aggregated revenue
+* yearly aggregated revenue
 This enables reusable and simplified reporting queries.
 
 ---
@@ -261,16 +262,10 @@ This project demonstrates:
 ---
 
 ## Assumptions & Scope
-• each row represents a single transaction
-• dataset may contain inconsistencies from source systems
-• project focuses on analytical processing (not OLTP design)
-• batch processing approach is used
-
----
-
-## Technology Stack
-MySQL 8.x
-SQL (DDL, DML, Data Cleaning, Data Analysis)
+* each row represents a single transaction
+* dataset may contain inconsistencies from source systems
+* project focuses on analytical processing (not OLTP design)
+* batch processing approach is used
 
 ---
 
@@ -296,17 +291,19 @@ SQL (DDL, DML, Data Cleaning, Data Analysis)
 ## How to Run This Project
 1. Create database and raw table
 2. Load CSV into:
+
 ```
 footwear_sales_raw
 ```
+
 3. Create clean table
 4. Run audit queries
 5. Execute analytical queries
 (Optional) Create indexes and views
 
 ### Ensure:
-• file path is allowed by secure_file_priv
-• MySQL has permission to access the file
+* file path is allowed by secure_file_priv
+* MySQL has permission to access the file
 
 ---
 
