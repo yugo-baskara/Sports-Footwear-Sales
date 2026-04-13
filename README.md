@@ -251,12 +251,12 @@ This enables reusable and simplified reporting queries.
 
 ## Key Engineering Highlights
 This project demonstrates:
-• layered data architecture (raw → clean → analytics)
-• robust data cleaning and transformation techniques
-• use of window functions (RANK, LAG)
-• defensive SQL practices (NULLIF, validation queries)
-• performance optimization using indexing
-• analytical thinking with business-driven insights
+1. layered data architecture (raw → clean → analytics)
+2. robust data cleaning and transformation techniques
+3. use of window functions (RANK, LAG)
+4. defensive SQL practices (NULLIF, validation queries)
+5. performance optimization using indexing
+6. analytical thinking with business-driven insights
 
 ---
 
@@ -284,9 +284,9 @@ SQL (DDL, DML, Data Cleaning, Data Analysis)
 
 ```
 .
-├── data/
-│   └── global_sports_footwear_sales.csv
-├── sql/
+├── DATA/
+│   └── data_sports_footwear.csv
+├── SQL/
 │   └── footwear_sales_pipeline.sql
 └── README.md
 ```
