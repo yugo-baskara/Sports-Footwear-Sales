@@ -321,7 +321,8 @@ footwear_sales_raw
 
 ### Y Baskara
 LinkedIn : https://www.linkedin.com/in/yugobaskara/
-Data Analyst | SQL | Data Engineering Enthusiast
+
+Auditor | Data Analyst | SQL | Data Engineering Enthusiast
 
 ---
 
