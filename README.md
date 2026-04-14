@@ -157,7 +157,7 @@ revenue aggregated by year
 ### Insight:
 Identifies growth trends and potential market shifts over time.
 
-### Example Querry
+### Example Query
 
 ```sql
 SELECT order_year, SUM(revenue_usd) AS total_revenue
@@ -176,6 +176,9 @@ ORDER BY order_year;
 | 2023       | 1,450,000     |
 |------------|---------------|
 ```
+
+*Sample output (illustrative only)*
+
 
 ---
 
